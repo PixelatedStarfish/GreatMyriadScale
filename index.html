@@ -1,0 +1,985 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Great Myriad Scale</title>
+    <style>
+    body {background-color: lightgrey;
+     font-family: Tahoma, sans-serif;
+}
+    h1   {color: black;}
+    p    {color: black;}
+
+    table, th, td {
+  border: 1px solid;
+  padding: 5px;
+}
+    </style>
+</head>
+<body>
+
+<h1>The Great Myriad Scale</h1>
+<p>Say for the sake of argument, you want to invent a new way to count. Maybe you had had a lot of counting to do, reps, days, sheep. Maybe you just need some way to spice things up. So, you start counting with the largest numbers you can name. Then, you run out of names, so you make up names, like a little kid would. Unlike a little kid, you actually start doing the counting homework, the math and research. You read about Archimedes, with his myriads of sand. You read about the Conway-Weschler system of "millinillions" which extend the Adam-Chuquet "millions". Oh! Kyoda, wrote a computer program, called "Conway’s illion Converter". How nice! While you are abusing that program, you watch the names get long, very, very long. Strings of Latin stretch out, past the edges of your screen, then, out of your screen, and into your room, onto your walls, and out your windows. Then, they double back! The numbers are getting supernatural, tying up in Knuth-ish knots of chaining arrows, bounding, bouncing, bowering about. It is all becoming too much! </p>
+<p>New plan, drop the millions. You can still count from one to ten, to twenty-five, to one hundred. You can count to one thousand, and to one-hundred-thousand, with products on the left of "thousand" and sums on the right. You can even count to one-thousand-thousand, but that needs a new name.  You try a "second thousand" and a third, and a fourth. How do you say that? Well, "fourth degree thousand" works. Hold that thought. Myriads work. They play nicely with "fourth" and "fifth", and all other oridnals. Okay, one-hundred-hundred is a myriad, and a squared myriad is a "second (degree) myriad". Multiply that by one hundred for "one hundred of the second myriad" and again for "one third myriad". The "one hundred second myriad" is a much larger number, not to be confused. Also, you need a word for "hundredth hundred" or "myriadth myriad. Okay, introduce "great" for "great hundred" and "great myriad". Great, but this is still all quite wordy. You think would be nice to consolidate some of these long strings into fewer words, before you start on with "great, great myriad", or "myriad of two greats". (How recursive!) Should you use some more Greek? "Deuteros" means "second". "Deuteros Myriad" can be shortened to deut-yriad. New word, "deutyriad", like a Greek-ish "billion" Oh boy, nomenclature. Keep going and you have a new (reinvented) scale. You have a "Great Myriad Scale". (Now python implemented, check the sources.)[1][2][3][4]</p>
+<h2>Design of the Great Myriad Scale</h2>
+<p>So you might be wondering what makes this project a scale, rather than a list of arbitrary numbers and made up names? The Great Myriad Scale was written with design criteria in mind, to achieve a primary goal: this scale should actually be countable. Someone should be able to start from one and (given enough time) count all of the natural numbers, one by one, two, three, all the way to the largest denominations, and on to infinity; every number in between one and a Great Myriad should have a useful name, constructed from a set of denominations:</p>
+<ul>
+<li>
+<p>Denominations are numbers whose names can be used to construct the names of other numbers, including one, ten, one hundred, one thousand, one myriad, and larger derivatives...</p>
+</li>
+<li>
+<p>The value of a denomination is constant. "One Hundred" always refers to 100, the square of ten. Name conflicts are not allowed. Names must be distinct, and pronounceable. So arbitrary names like "abcd" or "wxyz" are not allowed.   </p>
+</li>
+<li>
+<p>The names of non-denominational numbers are constructed from denominations: largest in the middle, products on the left, and sums on the right; (2 * 100 + 3) is "two hundred three".</p>
+</li>
+<li>
+<p>Denominations are always named according to one consistent scheme, which is constant throughout the entire scale. This scheme is not arbitrary, but based on a denomination, and compared to it with minimal edge cases. This includes naming powers of the myriad with Latinized Ancient Greek, or powers of the million with Latin. In these examples, larger denominations share an etymology with the denomination on which they are based.</p>
+</li>
+<li>
+<p>A denomination can be no larger than the square of a preceding, smaller denomination (with exception for denominations which are there own squares). In other words "one myriad, myriad, myriad" is just verbose, so is best to name that something shorter. Of course, there are only so many arrangements of letters, so a largest denomination must eventually be reached, but all smaller denominations that can follow this rule, will follow this rule.</p>
+</li>
+</ul>
+<h2>Defining the Myriad</h2>
+<p>First off, what is a myriad? So, one hundred is the square of ten, and one myriad is the square of one hundred. In other words, a myriad is equal to ten to the power of four (1,0000). Commas group four digits in this scale, so the square of a myriad is written as (1,0000,0000) What is the square of a myriad called? We will get to that. Let's start with a table to count from one to one myriad:</p>
+<table>
+<thead>
+<tr>
+<th>n</th>
+<th>Name</th>
+<th>n</th>
+<th>Name</th>
+<th>n</th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>One</td>
+<td>12</td>
+<td>Twelve</td>
+<td>30</td>
+<td>Thirty</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Two</td>
+<td>13</td>
+<td>Thirteen</td>
+<td>40</td>
+<td>Forty</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Three</td>
+<td>14</td>
+<td>Fourteen</td>
+<td>50</td>
+<td>Fifty</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Four</td>
+<td>15</td>
+<td>Fifteen</td>
+<td>60</td>
+<td>Sixty</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Five</td>
+<td>16</td>
+<td>Sixteen</td>
+<td>70</td>
+<td>Seventy</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Six</td>
+<td>17</td>
+<td>Seventeen</td>
+<td>80</td>
+<td>Eighty</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Seven</td>
+<td>18</td>
+<td>Eighteen</td>
+<td>90</td>
+<td>Ninety</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Eight</td>
+<td>19</td>
+<td>Nineteen</td>
+<td>100</td>
+<td>One Hundred</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Nine</td>
+<td>20</td>
+<td>Twenty</td>
+<td>500</td>
+<td>Five Hundred</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Ten</td>
+<td>21</td>
+<td>Twenty One</td>
+<td>1000</td>
+<td>Ten Hundred (One Thousand)</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Eleven</td>
+<td>22</td>
+<td>Twenty Two</td>
+<td>1,0000</td>
+<td>One Myriad</td>
+</tr>
+</tbody>
+</table>
+<p>You may notice the "ten hundred" there, and think it sounds a bit odd. Both terms are acceptable in this scale. There are nine round thousands below the myriad, from one thousand to nine thousand. You may call them thousands, or ten-hundreds, as you like. You can even use thousands right up to nine-thousand-nine-hundred-ninety-nine, if you promise to next use one hundred myriad. In other words, the Great Myriad Scale is not intended to be sold as "counting 2.0 - new and improved in every way". Instead this scale is intended as another tool in your kit, something to make those large numbers easier to deal with. That said, now it's time to get to that square of a myriad, and the larger powers. [5]</p>
+<h2>The Myriad Powers</h2>
+<p>In this scale each power of the myriad get a Greek prefix and an "-yriad" suffix. For example "deutyriad" is a myriad to the second power. it is named by shortening "deuteros myriad", with "deuteros" referring to "second". Each successive power follows this scheme:   </p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">e</th>
+<th style="text-align: left;">Name</th>
+<th style="text-align: right;">e</th>
+<th style="text-align: left;">Name</th>
+<th style="text-align: right;">e</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">One Myriad</td>
+<td style="text-align: right;">48</td>
+<td style="text-align: left;">One Dodecatyriad</td>
+<td style="text-align: right;">120</td>
+<td style="text-align: left;">One Tricostyriad</td>
+</tr>
+<tr>
+<td style="text-align: right;">8</td>
+<td style="text-align: left;">One Deutyriad</td>
+<td style="text-align: right;">52</td>
+<td style="text-align: left;">One Decatotrityriad</td>
+<td style="text-align: right;">160</td>
+<td style="text-align: left;">One Tesserecostyriad</td>
+</tr>
+<tr>
+<td style="text-align: right;">12</td>
+<td style="text-align: left;">One Trityriad</td>
+<td style="text-align: right;">56</td>
+<td style="text-align: left;">One Decatotetyriad</td>
+<td style="text-align: right;">200</td>
+<td style="text-align: left;">One Pentecostyriad</td>
+</tr>
+<tr>
+<td style="text-align: right;">16</td>
+<td style="text-align: left;">One Tetyriad</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: left;">One Decatopemptyriad</td>
+<td style="text-align: right;">240</td>
+<td style="text-align: left;">One Hexecostyriad</td>
+</tr>
+<tr>
+<td style="text-align: right;">20</td>
+<td style="text-align: left;">One Pemptyriad</td>
+<td style="text-align: right;">64</td>
+<td style="text-align: left;">One Decatohectyriad</td>
+<td style="text-align: right;">280</td>
+<td style="text-align: left;">One Hebdomecostyriad</td>
+</tr>
+<tr>
+<td style="text-align: right;">24</td>
+<td style="text-align: left;">One Hectyriad</td>
+<td style="text-align: right;">68</td>
+<td style="text-align: left;">One Decatohebdomyriad</td>
+<td style="text-align: right;">320</td>
+<td style="text-align: left;">One Ogdoecostyriad</td>
+</tr>
+<tr>
+<td style="text-align: right;">28</td>
+<td style="text-align: left;">One Hebdomyriad</td>
+<td style="text-align: right;">72</td>
+<td style="text-align: left;">One Decatogdyriad</td>
+<td style="text-align: right;">360</td>
+<td style="text-align: left;">One Enatecostyriad</td>
+</tr>
+<tr>
+<td style="text-align: right;">32</td>
+<td style="text-align: left;">One Ogdyriad</td>
+<td style="text-align: right;">76</td>
+<td style="text-align: left;">One Decatenatyriad</td>
+<td style="text-align: right;">400</td>
+<td style="text-align: left;">One Hecatostyriad</td>
+</tr>
+<tr>
+<td style="text-align: right;">36</td>
+<td style="text-align: left;">One Enatyriad</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: left;">One Icostyriad</td>
+<td style="text-align: right;">2000</td>
+<td style="text-align: left;">One Pentehecatostyriad</td>
+</tr>
+<tr>
+<td style="text-align: right;">40</td>
+<td style="text-align: left;">One Decatyriad</td>
+<td style="text-align: right;">84</td>
+<td style="text-align: left;">One Icostoprotyriad</td>
+<td style="text-align: right;">4000</td>
+<td style="text-align: left;">One Decatehecatostyriad</td>
+</tr>
+<tr>
+<td style="text-align: right;">44</td>
+<td style="text-align: left;">One Hendecatyriad</td>
+<td style="text-align: right;">88</td>
+<td style="text-align: left;">One Icostodeutyriad</td>
+<td style="text-align: right;">40000</td>
+<td style="text-align: left;">One Great Myriad</td>
+</tr>
+</tbody>
+</table>
+<p>Each power of the myriad is named in this pattern until the Great Myriad, which gives this scale its name. The Great Myriad is equal to the myriad raised to the power of a myriad, which is ten to the power of four myriad. Is that it? No, of course there is more to discuss. The "Myriad Great Myriad" is equal to a Great Myriad times a myriad. A Great Myriad times a deutyriad is a "Deutyriad Great Myriad". Square a Great Myriad for a Great Deutyriad. Cube it for a Great Trityriad, and so on. Of course, by raising the Great Myriad to the power of a myriad, we get a "Great, Great Myriad". Raise this to the power of a myriad again to get  a "Great, Great, Great Myriad" and so on. To keep names short, an adverbial naming scheme is used. The "Great, Great Myriad" is called the "Two-fold Greater Myriad". The "Great, Great, Great Myriad" is called the "Three-fold Greater Myriad", and so on. Eventually the "Myriad-fold Greater Myriad" is reached, which is followed by the "Deutyriad-fold Greater Myriad". Even the "Greater-Myriad-fold Greater Myriad" can be reached, in addition to the "Two-fold-Greater-Myriad-fold Greater Myriad". You are free to count right up to infinity this way. [5][6]</p>
+<h2>Constructing Cardinals, Ordinals, and Fractions</h2>
+<p>Counting the cardinal numbers between large myriads is done as it would be for any conventional denomination: largest in the middle, multipliers on the left, sums on the right. For example, one hundred times two, plus two is "two hundred, two" or "two hundred and two". Therefore, A great myriad times a myriad is a "myriad great myriad". Add one hundred to this and you get "one myriad, great myriad, one hundred".</p>
+<p>Ordinals are used for listing items; such as first, second, and third. The ordinals below the myriad are conventional: cardinal "ten" is paired with ordinal "tenth", hundred is paired with hundredth, thousand is paired with thousandth. Thus, cardinal "myriad" is paired with "myriadth", "deutyriad" with "deutyriadth", and "great myriad" with "great myriadth". Each cardinal has an ordinal, and these ordinals can be used to denote fractions (in the same manner that ordinals are conventionally used). One over a great myriad is "one great myriadth". Double that for "two great myraidths", and so on.  </p>
+<p>If you want to describe something like (1/3) * 1,0000,0000,0000; you can refer to it as a "third of a trityriad" or "one third of a third degree myriad". Admittedly, if you are using oridnals to describe powers of a myriad, you may need to explicitly specify ordinals that refer to fractional parts, as in "fractional fourth of a myriad" compared to "fourth degree myriad".[6]</p>
+<h2>Counting in Languages</h2>
+<p>Do not assume that because this document is written in American English, the Great Myriad Scale is only usable in American English. All terms coined are intended to be translated in about the same manner one would translate an English cardinal or ordinal number. If you use <em>myriad</em>, <em>myriade</em>, or <em>miriada</em>; then you would use <em>deutyriad</em>, <em>deutyriade</em>, or <em>deutiada</em> (assuming Google translate has accurately translated "myriad" into French and Spanish). Similarly, <em>Great</em> may translate to <em>Grande</em>, or <em>Grande</em>; <em>Tenfold</em> to <em>Diez veces</em> or <em>Dix fois</em>. Modify the nomenclature as required. </p>
+<h2>Scale Variations</h2>
+<p>Say, for the sake of argument, that you really like the short scale, but not the Latin. You want to count with powers of one thousand, rather than powers of one myriad, or of one million. Well, you can use "chilliads" to count in the "Great Chilliad" Scale. "Chilliad" refers to one thousand, and the square of one thousand would be a "deuterilliad", from "deuteros-chilliad". You can then substitute the third power for "tritilliad", from "Tritos-Chilliad" and continue on accordingly.</p>
+<p>If you instead want a super long scale, you can be like mathematician Donald Knuth, and set each new denomination to the square of the previous one. One hundred is the square of ten, and one myriad is the square of one hundred. Then, in Knuth's "Supernatural Numbers", "one myllion" is the square of one myriad, and the square of that is a "byllion". It's easy to rename the "myllion" to a "deutyriad", and the "byllion" to a "trityriad", and then continue onward to construct a "Supernatural Myriad Scale". [7]</p>
+<h2>Why?</h2>
+<p>Well, there are only so many names, there can only be so much wordplay. To keep all the numbers countable, their names needed to be constructed from smaller numbers. Sure, you can start naming with hyperoperations, but they grow faster, and faster and soon you have an unstable scaffold stretched over growing, turbulent voids ever more difficult to bridge. If you cannot count to a number, then such a number is really a vague suggestion of magnitude, a dream of many zeroes... Oh, you meant "Why invent this counting scale thing anyway? Millions are fine, and we already have scientific notation, and who would ever count from one to 'greater-myriad-fold greater myriad' anyway?" Well, have you ever played one of those incremental video games, with all the numbers going up to astronomical absurdity? You wake up to "Hey, while you were sleeping, you got twenty quattuorvigintillion points in the tower of tumbleweeds!", and you remember all the sheep you counted last night, hoping for rest, because in the morning, you have a fracture to tend. You have to prevent muscular atrophy by isometrically flexing a muscle several hundred times, and that means even more counting. </p>
+<p>So you make up new names for new numbers, to spice it up. You ask yourself "Where do all the number names come from anyway, and when do we run out?" and you begin researching and lo, the rabbit hole! It opens before you to a wonderland of Latin and "googology", and before you realize it you have let the number goblins in. They shout "We want an incremental game! One where players can read all the numbers!" They jump on the bed. "Notations! Bah! Fie on notations!" The number goblins demand a sense of scale. "Notations transform orders of magnitude into mere increments! Madness! People need names! Names!" They grab hold of the bed knobs and shake. The leader shouts in your ear "Don't you understand?! Do it for Archimedes!" The chanting begins. "Conway! Weschler! Knuth!". You are surrounded in a cacophonous, cantankerous, chorus of contention! Then, in unison, a deep breath, and the call of a great horn. Then you hear it, "Millinillinillinillinyllion!" With this incantation you are changed, goblinified! There is only one way to lift the spell! Give them their tables, and their powers of ten, so that they might count in numerological novelty until the end of all things! Of course, you accept the mission, and by the time you are healed, you have finished some sort of hobbyist research paper on numeric conjecture, complete with a nice little implementation for the goblins to play with. </p>
+<h2>Proof of the Great Myriad Scale</h2>
+<p>All of this discussion of counting has attracted the attention of a Number Goblin. They seem unimpressed by the tables, wordplay, and implementation. They sneer at the coinages, the portmanteaus, and the liberties taken with Ancient Greek. "Enatecostos? I think you mean 'enenekostos'. Pentehecatostos? Fie! You mean 'pentakosiostos'. I do not trust your wordplay, your tables, not your rules, not your implementation. Not yet! A bit of recursion and concatination is not going to convince me that easily!" The Goblin issues a challenge: "You will prove you can count in arbitrary succesion. You will do so without reliance on scales, or languages. You will count with the absolute minimum of vocabulary, in base ten, with a unique name for each succeding natural number!"</p>
+<p>You must begin, with no other choice, you start with calling 1, "one". One is succeded by "two", then "three", then "four", then "five", "six", "seven", "eight", "nine", and then "ten", with each named as directed by the Goblin. With that, you have named every natural number out to 10, in base ten. You pause. "What comes next?" the Goblin demands. "Eleven", you say, a mistake. "No!", the Goblin screams "Minimize required vocabulary!" Obliged, you decide that "ten" must be succeeded by "ten-one". This pleases the Goblin. They watch you count to "ten-nine" with a smile, naming each natural number in succession. Having reached 20, you pause again, and begin to say "twen-", "No!" the Goblin interupts with a screech. "Two-ten! Got it?! Two-ten! Now, what comes after that?!". You reply with "Two-ten-one", speaking in a careful, trembling, whisper. "Good! Now proceed!" the Goblin urges with a toothy grin. Again, you continue, to "two-ten-nine" for 29, past "three-ten" (30), and "four-ten-two" (42), and just after "nine-ten-nine" (99), you hear "Stop!" cutting in. "You were about to say 'ten-ten' a name much too ambiguous to use! It could refer to 20 or to 100, if no context is provided! This cannot do!" The Goblin thinks, with a scratch of long nails on a scaly chin. You inhale to speak, but not as quickly as the Goblin. "I will now provide you with levity! Accept this generous offer of a new word to the vocabulary. I call it 'hundred', and you will call 100 'hundred'. You will be provided with a new word at the square of this denomination. Now, rejoice!" </p>
+<p>You continue on, counting "hundred-one" (101), and "hundred-two" (102). You count past "hundred-two-ten" (120), and reach "two-hundred" (200), in a manner similar to your method for counting to "hundred". Then you count through the hundreds, successively, over a few hours. You count past "two-ten-hundred" (2000), and "five-ten-five-hundred-five-ten-five" (5555). The Goblin is silent, but watching intently. You have not the chance to notice the blinking of their eyes, as you count to "nine-ten-nine-hundred-nine-ten-nine" (9999). "Myriad! 10000 will be called the 'myriad'". As with "ten", and "hundred", you begin to proceed to the next square, but you realize that is going to take several weeks. You stop. The Goblin begins to speak, but you best them to it. "'Myriamyriad!' That would be the name for 100000000! The square of that is twice as verbose, 'myriamyriamyriamyriad!' The next square is the 'myriamyriamyriamyriamyriamyriamyriamyriad!' Is that not proof enough?! Can we please use a scale now?!". Time passes, and the Goblin relents. "Very well, you are quite repetitive without one. This will be of great help to our quest. You are free." and so the Goblin vanishes into digits, with a parting remark: "For fractions, you can use 'over' as in 'one-over-five!'" </p>
+<h2>Footnotes and (Additional) Trivia</h2>
+<ul>
+<li>Strictly employing Ancient Greek ordinals is, in a word, challenging. There are conflicting uses of ordinal and cardinal forms, which is to say nothing of the challenges of conflicting transliterations. Nomenclature was chosen to minimize exceptional namings or spellings.</li>
+<li>You can certainly call infinity the "Apyriad" if you wish. The "Apyriad" is derived from "apeiro".[5]</li>
+<li>Archimedes' largest Sand Number (the largest described in The Sand Reckoner) is equal to 10^(8 * 10^16), or a "Four-fold Greater Deutyriad".[8]</li>
+<li>"Cola's Enumeration" and the "Ordinal Myriad Scale" are previous attempts to enumerate large numbers, using the Conway Wechsler system, Greek ordinals, and hyperoperations. Ultimately, it is important that each name for a large number is based on the names of smaller numbers, rather than operations or notations. The numbers between "novel numbers", or "milestone numbers", also need to be nameable.</li>
+</ul>
+<h2>Sources</h2>
+<ul>
+<li>[1] <a href="https://github.com/AndrewJVella/GreatMyriadScale/tree/main">Github Repository for this Page</a></li>
+<li>[2] <a href="https://kyodaisuu.github.io/illion/conway.html">Conway's illion Converter and the Conway-Weschler System</a></li>
+<li>[3] <a href="https://en.wikipedia.org/wiki/Long_and_short_scales">Long and Short Scales</a></li>
+<li>[4] <a href="https://en.wikipedia.org/wiki/Myriad">Myriad</a></li>
+<li>[5] <a href="https://en.wikipedia.org/wiki/List_of_polygons">List of Polygons</a></li>
+<li>[6] <a href="https://en.wiktionary.org/wiki/%CF%84%CE%AD%CF%83%CF%83%CE%B1%CF%81%CE%B5%CF%82">Ancient Greek Numbers</a></li>
+<li>[7] <a href="https://mrob.com/pub/math/largenum-2.html#yllion">Knuth's Supernatural Numbers</a></li>
+<li>[8] <a href="https://en.wikipedia.org/wiki/The_Sand_Reckoner">Archimedes' Sand Number</a></li>
+</ul>
+<h2>Tables</h2>
+<p>Nomenclature Table[5][6]</p>
+<table>
+<thead>
+<tr>
+<th>n</th>
+<th>Name</th>
+<th>n</th>
+<th>Name</th>
+<th>n</th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Protos</td>
+<td>12</td>
+<td>Dodecatos</td>
+<td>30</td>
+<td>Tricostos</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Deuteros</td>
+<td>13</td>
+<td>Decatotritos</td>
+<td>40</td>
+<td>Tesserecostos</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Tritos</td>
+<td>14</td>
+<td>Decatotesseros</td>
+<td>50</td>
+<td>Pentecostos</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Tetaros</td>
+<td>15</td>
+<td>Decatopemptos</td>
+<td>60</td>
+<td>Hexecostos</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Pemptos</td>
+<td>16</td>
+<td>Decatohectos</td>
+<td>70</td>
+<td>Hebdomecostos</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Hectos</td>
+<td>17</td>
+<td>Decatohebdomos</td>
+<td>80</td>
+<td>Ogdoecostos</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Hebdomos</td>
+<td>18</td>
+<td>Decatogdoos</td>
+<td>90</td>
+<td>Enatecostos</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Ogdoos</td>
+<td>19</td>
+<td>Decatenatos</td>
+<td>100</td>
+<td>Hecatostos</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Enatos</td>
+<td>20</td>
+<td>Icostos</td>
+<td>500</td>
+<td>Pentehecatostos</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Decatos</td>
+<td>21</td>
+<td>Icostoprotos</td>
+<td>1000</td>
+<td>Decatehecatostos (Chiliostos)</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Hendecatos</td>
+<td>22</td>
+<td>Icostodeuteros</td>
+<td>10000</td>
+<td>Myriad (Myriastos)</td>
+</tr>
+</tbody>
+</table>
+<p>Sub-myriad Table[5] </p>
+<table>
+<thead>
+<tr>
+<th>n</th>
+<th>Name</th>
+<th>n</th>
+<th>Name</th>
+<th>n</th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>One</td>
+<td>12</td>
+<td>Twelve</td>
+<td>30</td>
+<td>Thirty</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Two</td>
+<td>13</td>
+<td>Thirteen</td>
+<td>40</td>
+<td>Forty</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Three</td>
+<td>14</td>
+<td>Fourteen</td>
+<td>50</td>
+<td>Fifty</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Four</td>
+<td>15</td>
+<td>Fifteen</td>
+<td>60</td>
+<td>Sixty</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Five</td>
+<td>16</td>
+<td>Sixteen</td>
+<td>70</td>
+<td>Seventy</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Six</td>
+<td>17</td>
+<td>Seventeen</td>
+<td>80</td>
+<td>Eighty</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Seven</td>
+<td>18</td>
+<td>Eighteen</td>
+<td>90</td>
+<td>Ninety</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Eight</td>
+<td>19</td>
+<td>Nineteen</td>
+<td>100</td>
+<td>One Hundred</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Nine</td>
+<td>20</td>
+<td>Twenty</td>
+<td>500</td>
+<td>Five Hundred</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Ten</td>
+<td>21</td>
+<td>Twenty One</td>
+<td>1000</td>
+<td>Ten Hundred (One Thousand)</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Eleven</td>
+<td>22</td>
+<td>Twenty Two</td>
+<td>1,0000</td>
+<td>One Myriad</td>
+</tr>
+</tbody>
+</table>
+<p>The Myriad Powers[5][6]</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">e</th>
+<th style="text-align: left;">Name</th>
+<th style="text-align: right;">e</th>
+<th style="text-align: left;">Name</th>
+<th style="text-align: right;">e</th>
+<th style="text-align: left;">Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">One Myriad</td>
+<td style="text-align: right;">48</td>
+<td style="text-align: left;">One Dodecatyriad</td>
+<td style="text-align: right;">120</td>
+<td style="text-align: left;">One Tricostyriad</td>
+</tr>
+<tr>
+<td style="text-align: right;">8</td>
+<td style="text-align: left;">One Deutyriad</td>
+<td style="text-align: right;">52</td>
+<td style="text-align: left;">One Decatotrityriad</td>
+<td style="text-align: right;">160</td>
+<td style="text-align: left;">One Tesserecostyriad</td>
+</tr>
+<tr>
+<td style="text-align: right;">12</td>
+<td style="text-align: left;">One Trityriad</td>
+<td style="text-align: right;">56</td>
+<td style="text-align: left;">One Decatotetyriad</td>
+<td style="text-align: right;">200</td>
+<td style="text-align: left;">One Pentecostyriad</td>
+</tr>
+<tr>
+<td style="text-align: right;">16</td>
+<td style="text-align: left;">One Tetyriad</td>
+<td style="text-align: right;">60</td>
+<td style="text-align: left;">One Decatopemptyriad</td>
+<td style="text-align: right;">240</td>
+<td style="text-align: left;">One Hexecostyriad</td>
+</tr>
+<tr>
+<td style="text-align: right;">20</td>
+<td style="text-align: left;">One Pemptyriad</td>
+<td style="text-align: right;">64</td>
+<td style="text-align: left;">One Decatohectyriad</td>
+<td style="text-align: right;">280</td>
+<td style="text-align: left;">One Hebdomecostyriad</td>
+</tr>
+<tr>
+<td style="text-align: right;">24</td>
+<td style="text-align: left;">One Hectyriad</td>
+<td style="text-align: right;">68</td>
+<td style="text-align: left;">One Decatohebdomyriad</td>
+<td style="text-align: right;">320</td>
+<td style="text-align: left;">One Ogdoecostyriad</td>
+</tr>
+<tr>
+<td style="text-align: right;">28</td>
+<td style="text-align: left;">One Hebdomyriad</td>
+<td style="text-align: right;">72</td>
+<td style="text-align: left;">One Decatogdyriad</td>
+<td style="text-align: right;">360</td>
+<td style="text-align: left;">One Enatecostyriad</td>
+</tr>
+<tr>
+<td style="text-align: right;">32</td>
+<td style="text-align: left;">One Ogdyriad</td>
+<td style="text-align: right;">76</td>
+<td style="text-align: left;">One Decatenatyriad</td>
+<td style="text-align: right;">400</td>
+<td style="text-align: left;">One Hecatostyriad</td>
+</tr>
+<tr>
+<td style="text-align: right;">36</td>
+<td style="text-align: left;">One Enatyriad</td>
+<td style="text-align: right;">80</td>
+<td style="text-align: left;">One Icostyriad</td>
+<td style="text-align: right;">2000</td>
+<td style="text-align: left;">One Pentehecatostyriad</td>
+</tr>
+<tr>
+<td style="text-align: right;">40</td>
+<td style="text-align: left;">One Decatyriad</td>
+<td style="text-align: right;">84</td>
+<td style="text-align: left;">One Icostoprotyriad</td>
+<td style="text-align: right;">4000</td>
+<td style="text-align: left;">One Decatehecatostyriad</td>
+</tr>
+<tr>
+<td style="text-align: right;">44</td>
+<td style="text-align: left;">One Hendecatyriad</td>
+<td style="text-align: right;">88</td>
+<td style="text-align: left;">One Icostodeutyriad</td>
+<td style="text-align: right;">40000</td>
+<td style="text-align: left;">One Great Myriad</td>
+</tr>
+</tbody>
+</table>
+<p>Table of Scales[2][3][4][5][6]</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">e</th>
+<th style="text-align: left;">Great Myriad Scale</th>
+<th style="text-align: left;">Conway-Weschler Short</th>
+<th style="text-align: left;">Conway-Weschler Long</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">One</td>
+<td style="text-align: left;">One</td>
+<td style="text-align: left;">One</td>
+</tr>
+<tr>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Ten</td>
+<td style="text-align: left;">Ten</td>
+<td style="text-align: left;">Ten</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">One Hundred</td>
+<td style="text-align: left;">One Hundred</td>
+<td style="text-align: left;">One Hundred</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">Ten Hundred</td>
+<td style="text-align: left;">One Thousand</td>
+<td style="text-align: left;">One Thousand</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">One Myriad</td>
+<td style="text-align: left;">Ten Thousand</td>
+<td style="text-align: left;">Ten Thousand</td>
+</tr>
+<tr>
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">Ten Myriad</td>
+<td style="text-align: left;">One Hundred Thousand</td>
+<td style="text-align: left;">One Hundred Thousand</td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td style="text-align: left;">One Hundred Myriad</td>
+<td style="text-align: left;">One Million</td>
+<td style="text-align: left;">One Million</td>
+</tr>
+<tr>
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">Ten Hundred Myriad</td>
+<td style="text-align: left;">Ten Million</td>
+<td style="text-align: left;">Ten Million</td>
+</tr>
+<tr>
+<td style="text-align: right;">8</td>
+<td style="text-align: left;">One Deutyriad</td>
+<td style="text-align: left;">One Hundred Million</td>
+<td style="text-align: left;">One Hundred Million</td>
+</tr>
+<tr>
+<td style="text-align: right;">12</td>
+<td style="text-align: left;">One Trityriad</td>
+<td style="text-align: left;">One Trillion</td>
+<td style="text-align: left;">One Billion</td>
+</tr>
+<tr>
+<td style="text-align: right;">16</td>
+<td style="text-align: left;">One Tetyriad</td>
+<td style="text-align: left;">Ten Quadrillion</td>
+<td style="text-align: left;">Ten Thousand Billion</td>
+</tr>
+<tr>
+<td style="text-align: right;">20</td>
+<td style="text-align: left;">One Pemptyriad</td>
+<td style="text-align: left;">One Hundred Quintillion</td>
+<td style="text-align: left;">One Hundred Trillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">24</td>
+<td style="text-align: left;">One Hectyriad</td>
+<td style="text-align: left;">One Septillion</td>
+<td style="text-align: left;">One Quadrillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">28</td>
+<td style="text-align: left;">One Hebdomyriad</td>
+<td style="text-align: left;">Ten Octillion</td>
+<td style="text-align: left;">Ten Thousand Quadrillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">32</td>
+<td style="text-align: left;">One Ogdyriad</td>
+<td style="text-align: left;">One Hundred Nonillion</td>
+<td style="text-align: left;">One Hundred Quintillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">36</td>
+<td style="text-align: left;">One Enatyriad</td>
+<td style="text-align: left;">One Undecillion</td>
+<td style="text-align: left;">One Sextillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">40</td>
+<td style="text-align: left;">One Decatyriad</td>
+<td style="text-align: left;">Ten Duodecillion</td>
+<td style="text-align: left;">Ten Thousand Sextillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">44</td>
+<td style="text-align: left;">One Hendecatyriad</td>
+<td style="text-align: left;">One Hundred Tredecillion</td>
+<td style="text-align: left;">One Hundred Septillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">48</td>
+<td style="text-align: left;">One Dodecatyriad</td>
+<td style="text-align: left;">One Quindecillion</td>
+<td style="text-align: left;">One Octillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">52</td>
+<td style="text-align: left;">One Decatotrityriad</td>
+<td style="text-align: left;">Ten Sedecillion</td>
+<td style="text-align: left;">Ten Thousand Octillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">56</td>
+<td style="text-align: left;">One Decatotetyriad</td>
+<td style="text-align: left;">One Hundred Septendecillion</td>
+<td style="text-align: left;">One Hundred Nonillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">60</td>
+<td style="text-align: left;">One Decatopemptyriad</td>
+<td style="text-align: left;">One Novendecillion</td>
+<td style="text-align: left;">One Decillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">64</td>
+<td style="text-align: left;">One Decatohectyriad</td>
+<td style="text-align: left;">Ten Vigintillion</td>
+<td style="text-align: left;">Ten Thousand Decillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">68</td>
+<td style="text-align: left;">One Decatohebdomyriad</td>
+<td style="text-align: left;">One Hundred Unvigintillion</td>
+<td style="text-align: left;">One Hundred Undecillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">72</td>
+<td style="text-align: left;">One Decatogdyriad</td>
+<td style="text-align: left;">One Tresvigintillion</td>
+<td style="text-align: left;">One Duodecillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">76</td>
+<td style="text-align: left;">One Decatenatyriad</td>
+<td style="text-align: left;">Ten Quattuorvigintillion</td>
+<td style="text-align: left;">Ten Thousand Duodecillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">80</td>
+<td style="text-align: left;">One Icostyriad</td>
+<td style="text-align: left;">One Hundred Quinvigintillion</td>
+<td style="text-align: left;">One Hundred Tredecillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">84</td>
+<td style="text-align: left;">One Icostoprotyriad</td>
+<td style="text-align: left;">One Septemvigintillion</td>
+<td style="text-align: left;">One Quattuordecillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">88</td>
+<td style="text-align: left;">One Icostodeutyriad</td>
+<td style="text-align: left;">Ten Octovigintillion</td>
+<td style="text-align: left;">Ten Thousand Quattuordecillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">92</td>
+<td style="text-align: left;">One Icostotrityriad</td>
+<td style="text-align: left;">One Hundred Novemvigintillion</td>
+<td style="text-align: left;">One Hundred Quindecillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">96</td>
+<td style="text-align: left;">One Icostotetyriad</td>
+<td style="text-align: left;">One Untrigintillion</td>
+<td style="text-align: left;">One Sedecillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">100</td>
+<td style="text-align: left;">One Icostopemptyriad</td>
+<td style="text-align: left;">Ten Duotrigintillion</td>
+<td style="text-align: left;">Ten Thousand Sedecillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">200</td>
+<td style="text-align: left;">One Pentecostyriad</td>
+<td style="text-align: left;">One Hundred Quinsexagintillion</td>
+<td style="text-align: left;">One Hundred Trestrigintillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">400</td>
+<td style="text-align: left;">One Hecatostyriad</td>
+<td style="text-align: left;">Ten Duotrigintacentillion</td>
+<td style="text-align: left;">Ten Thousand Sesexagintillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">404</td>
+<td style="text-align: left;">One Hecatostprotyriad</td>
+<td style="text-align: left;">One Hundred Trestrigintacentillion</td>
+<td style="text-align: left;">One Hundred Septensexagintillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">800</td>
+<td style="text-align: left;">One Deuterehecatostyriad</td>
+<td style="text-align: left;">One Hundred Quinsexagintaducentillion</td>
+<td style="text-align: left;">One Hundred Trestrigintacentillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">1200</td>
+<td style="text-align: left;">One Tritehecatostyriad</td>
+<td style="text-align: left;">One Novenonagintatrecentillion</td>
+<td style="text-align: left;">One Ducentillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">1600</td>
+<td style="text-align: left;">One Tesserehecatostyriad</td>
+<td style="text-align: left;">Ten Duotrigintaquingentillion</td>
+<td style="text-align: left;">Ten Thousand Sesexagintaducentillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">2000</td>
+<td style="text-align: left;">One Pentehecatostyriad</td>
+<td style="text-align: left;">One Hundred Quinsexagintasescentillion</td>
+<td style="text-align: left;">One Hundred Trestrigintatrecentillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">2400</td>
+<td style="text-align: left;">One Hexehecatostyriad</td>
+<td style="text-align: left;">One Novenonagintaseptingentillion</td>
+<td style="text-align: left;">One Quadringentillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">2800</td>
+<td style="text-align: left;">One Hebdomehecatostyriad</td>
+<td style="text-align: left;">Ten Duotrigintanongentillion</td>
+<td style="text-align: left;">Ten Thousand Sesexagintaquadringentillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">3200</td>
+<td style="text-align: left;">One Ogdoehecatostyriad</td>
+<td style="text-align: left;">One Hundred Milliquinsexagintillion</td>
+<td style="text-align: left;">One Hundred Trestrigintaquingentillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">3600</td>
+<td style="text-align: left;">One Enatehecatostyriad</td>
+<td style="text-align: left;">One Millinovenonagintacentillion</td>
+<td style="text-align: left;">One Sescentillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">4000</td>
+<td style="text-align: left;">One Decatehecatostyriad</td>
+<td style="text-align: left;">Ten Milliduotrigintatrecentillion</td>
+<td style="text-align: left;">Ten Thousand Sesexagintasescentillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">4400</td>
+<td style="text-align: left;">One Hendecatehecatostyriad</td>
+<td style="text-align: left;">One Hundred Milliquinsexagintaquadringentillion</td>
+<td style="text-align: left;">One Hundred Trestrigintaseptingentillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">4800</td>
+<td style="text-align: left;">One Dodecatehecatostyriad</td>
+<td style="text-align: left;">One Millinovenonagintaquingentillion</td>
+<td style="text-align: left;">One Octingentillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">5200</td>
+<td style="text-align: left;">One Decatetritehecatostyriad</td>
+<td style="text-align: left;">Ten Milliduotrigintaseptingentillion</td>
+<td style="text-align: left;">Ten Thousand Sesexagintaoctingentillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">5600</td>
+<td style="text-align: left;">One Decatetesserehecatostyriad</td>
+<td style="text-align: left;">One Hundred Milliquinsexagintaoctingentillion</td>
+<td style="text-align: left;">One Hundred Trestrigintanongentillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">6000</td>
+<td style="text-align: left;">One Decatepentehecatostyriad</td>
+<td style="text-align: left;">One Millinovenonagintanongentillion</td>
+<td style="text-align: left;">One Millinillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">6400</td>
+<td style="text-align: left;">One Decatehexehecatostyriad</td>
+<td style="text-align: left;">Ten Billiduotrigintacentillion</td>
+<td style="text-align: left;">Ten Thousand Millisesexagintillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">6800</td>
+<td style="text-align: left;">One Decatehebdomehecatostyriad</td>
+<td style="text-align: left;">One Hundred Billiquinsexagintaducentillion</td>
+<td style="text-align: left;">One Hundred Millitrestrigintacentillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">7200</td>
+<td style="text-align: left;">One Decatogdoehecatostyriad</td>
+<td style="text-align: left;">One Billinovenonagintatrecentillion</td>
+<td style="text-align: left;">One Milliducentillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">7600</td>
+<td style="text-align: left;">One Decatenatehecatostyriad</td>
+<td style="text-align: left;">Ten Billiduotrigintaquingentillion</td>
+<td style="text-align: left;">Ten Thousand Millisesexagintaducentillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">8000</td>
+<td style="text-align: left;">One Icostehecatostyriad</td>
+<td style="text-align: left;">One Hundred Billiquinsexagintasescentillion</td>
+<td style="text-align: left;">One Hundred Millitrestrigintatrecentillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">8400</td>
+<td style="text-align: left;">One Icosteprotehecatostyriad</td>
+<td style="text-align: left;">One Billinovenonagintaseptingentillion</td>
+<td style="text-align: left;">One Milliquadringentillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">8800</td>
+<td style="text-align: left;">One Icostedeuterehecatostyriad</td>
+<td style="text-align: left;">Ten Billiduotrigintanongentillion</td>
+<td style="text-align: left;">Ten Thousand Millisesexagintaquadringentillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">9200</td>
+<td style="text-align: left;">One Icostetritehecatostyriad</td>
+<td style="text-align: left;">One Hundred Trilliquinsexagintillion</td>
+<td style="text-align: left;">One Hundred Millitrestrigintaquingentillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">9600</td>
+<td style="text-align: left;">One Icostetesserehecatostyriad</td>
+<td style="text-align: left;">One Trillinovenonagintacentillion</td>
+<td style="text-align: left;">One Millisescentillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">10000</td>
+<td style="text-align: left;">One Icostepentehecatostyriad</td>
+<td style="text-align: left;">Ten Trilliduotrigintatrecentillion</td>
+<td style="text-align: left;">Ten Thousand Millisesexagintasescentillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">20000</td>
+<td style="text-align: left;">One Pentecostehecatostyriad</td>
+<td style="text-align: left;">One Hundred Sextilliquinsexagintasescentillion</td>
+<td style="text-align: left;">One Hundred Trillitrestrigintatrecentillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">40000</td>
+<td style="text-align: left;">One Great Myriad</td>
+<td style="text-align: left;">Ten Tredecilliduotrigintatrecentillion</td>
+<td style="text-align: left;">Ten Thousand Sextillisesexagintasescentillion</td>
+</tr>
+<tr>
+<td style="text-align: right;">40004</td>
+<td style="text-align: left;">One Myriad Great Myriad</td>
+<td style="text-align: left;">One Hundred Tredecillitrestrigintatrecentillion</td>
+<td style="text-align: left;">One Hundred Sextilliseptensexagintasescentillion</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
