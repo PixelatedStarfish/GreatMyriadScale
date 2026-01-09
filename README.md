@@ -37,9 +37,9 @@ First off, what is a myriad? So, one hundred is the square of ten, and one myria
 | 8  | Eight  | 19 | Nineteen   | 100    | One Hundred                |
 | 9  | Nine   | 20 | Twenty     | 500    | Five Hundred               |
 | 10 | Ten    | 21 | Twenty One | 1000   | Ten Hundred (One Thousand) |
-| 11 | Eleven | 22 | Twenty Two | 1,0000 | One Myriad                 |
+| 11 | Eleven | 22 | Twenty Two | 1,0000 | One Myriad  (Ten Thousand) |
 
-You may notice the "ten hundred" there, and think it sounds a bit odd. Both terms are acceptable in this scale. There are nine round thousands below the myriad, from one thousand to nine thousand. You may call them thousands, or ten-hundreds, as you like. You can even use thousands right up to nine-thousand-nine-hundred-ninety-nine, if you promise to next use one hundred myriad. In other words, the Great Myriad Scale is not intended to be sold as "counting 2.0 - new and improved in every way". Instead this scale is intended as another tool in your kit, something to make those large numbers easier to deal with. That said, now it's time to get to that square of a myriad, and the larger powers. [5]
+You may notice the "ten hundred" there, and think it sounds a bit odd. Both "ten hundreds" and "one thousands" are acceptable in this scale. As a guideline, thousands as best used for rounded thousands under ten to the fifth power (ten myriad). Rounded thousands are integers with zeroes in units, tens, and hundreds place ("five thousand"). If a thousand is not round, use hundreds ("fifteen hundred"). At ten to the fifth, switch to myriads. That said, this project is not intended to argue that the way you count is wrong. In other words, the Great Myriad Scale is not intended to be sold as "counting 2.0 - new and improved in every way". Instead this scale is intended as another tool in your kit, something to make those large numbers easier to deal with. Now it's time to get to that square of a myriad, and the larger powers. [5]
 
 
 ## The Myriad Powers
