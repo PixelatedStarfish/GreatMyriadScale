@@ -71,19 +71,6 @@ Ordinals are used for listing items; such as first, second, and third. The ordin
 
 If you want to describe something like (1/3) * 1,0000,0000,0000; you can refer to it as a "third of a trityriad" or "one third of a third degree myriad". Admittedly, if you are using oridnals to describe powers of a myriad, you may need to explicitly specify ordinals that refer to fractional parts, as in "fractional fourth of a myriad" compared to "fourth degree myriad".[6]
 
-
-## Counting in Languages
-
-Do not assume that because this document is written in American English, the Great Myriad Scale is only usable in American English. All terms coined are intended to be translated in about the same manner one would translate an English cardinal or ordinal number. If you use *myriad*, *myriade*, or *miriada*; then you would use *deutyriad*, *deutyriade*, or *deutiada* (assuming Google translate has accurately translated "myriad" into French and Spanish). Similarly, *Great* may translate to *Grande*, or *Grande*; *Tenfold* to *Diez veces* or *Dix fois*. Modify the nomenclature as required. 
-
-
-## Scale Variations
-
-Say, for the sake of argument, that you really like the short scale, but not the Latin. You want to count with powers of one thousand, rather than powers of one myriad, or of one million. Well, you can use "chilliads" to count in the "Great Chilliad" Scale. "Chilliad" refers to one thousand, and the square of one thousand would be a "deuterilliad", from "deuteros-chilliad". You can then substitute the third power for "tritilliad", from "Tritos-Chilliad" and continue on accordingly.
-
-If you instead want a super long scale, you can be like mathematician Donald Knuth, and set each new denomination to the square of the previous one. One hundred is the square of ten, and one myriad is the square of one hundred. Then, in Knuth's "Supernatural Numbers", "one myllion" is the square of one myriad, and the square of that is a "byllion". It's easy to rename the "myllion" to a "deutyriad", and the "byllion" to a "trityriad", and then continue onward to construct a "Supernatural Myriad Scale". [7]
-
-
 ## Why?
 
 Well, there are only so many names, there can only be so much wordplay. To keep all the numbers countable, their names needed to be constructed from smaller numbers. Sure, you can start naming with hyperoperations, but they grow faster, and faster and soon you have an unstable scaffold stretched over growing, turbulent voids ever more difficult to bridge. If you cannot count to a number, then such a number is really a vague suggestion of magnitude, a dream of many zeroes... Oh, you meant "Why invent this counting scale thing anyway? Millions are fine, and we already have scientific notation, and who would ever count from one to 'greater-myriad-fold greater myriad' anyway?" Well, have you ever played one of those incremental video games, with all the numbers going up to astronomical absurdity? You wake up to "Hey, while you were sleeping, you got twenty quattuorvigintillion points in the tower of tumbleweeds!", and you remember all the sheep you counted last night, hoping for rest, because in the morning, you have a fracture to tend. You have to prevent muscular atrophy by isometrically flexing a muscle several hundred times, and that means even more counting. 
@@ -100,17 +87,37 @@ You must begin, with no other choice, you start with calling 1, "one". One is su
 You continue on, counting "hundred-one" (101), and "hundred-two" (102). You count past "hundred-two-ten" (120), and reach "two-hundred" (200), in a manner similar to your method for counting to "hundred". Then you count through the hundreds, successively, over a few hours. You count past "two-ten-hundred" (2000), and "five-ten-five-hundred-five-ten-five" (5555). The Goblin is silent, but watching intently. You have not the chance to notice the blinking of their eyes, as you count to "nine-ten-nine-hundred-nine-ten-nine" (9999). "Myriad! 10000 will be called the 'myriad'". As with "ten", and "hundred", you begin to proceed to the next square, but you realize that is going to take several weeks. You stop. The Goblin begins to speak, but you best them to it. "'Myriamyriad!' That would be the name for 100000000! The square of that is twice as verbose, 'myriamyriamyriamyriad!' The next square is the 'myriamyriamyriamyriamyriamyriamyriamyriad!' Is that not proof enough?! Can we please use a scale now?!". Time passes, and the Goblin relents. "Very well, you are quite repetitive without one. This will be of great help to our quest. You are free." and so the Goblin vanishes into digits, with a parting remark: "For fractions, you can use 'over' as in 'one-over-five!'" 
 
 
+## Scale Variations
+
+### On Knuth's Supernatural Numbers
+Say, for the sake of argument, that you really like the short scale, but not the Latin. You want to count with powers of one thousand, rather than powers of one myriad, or of one million. Well, you can use "chilliads" to count in the "Great Chilliad" Scale. "Chilliad" refers to one thousand, and the square of one thousand would be a "deuterilliad", from "deuteros-chilliad". You can then substitute the third power for "tritilliad", from "Tritos-Chilliad" and continue on accordingly.
+
+### On Knuth's Supernatural Numbers
+If you instead want a super long scale, you can be like mathematician Donald Knuth, and set each new denomination to the square of the previous one. One hundred is the square of ten, and one myriad is the square of one hundred. Then, in Knuth's "Supernatural Numbers", "one myllion" is the square of one myriad, and the square of that is a "byllion". It's easy to rename the "myllion" to a "deutyriad", and the "byllion" to a "trityriad", and then continue onward to construct a "Supernatural Myriad Scale". [7]
+
+### Hyperoperations 
+So the hyperoperations are a hierarchy of operators, that can be used to describe very large numbers. To define these, note that the operation of multiplication is repeated addition, such that 2 * 3 is 2 + 2 + 2. Further, the operation of exponentiation is repeated multiplication, such that 2^3 is 2 * 2 * 2. Therefore repeated exponentiation can also define an operation ("tetration") such that 2^^3 is 2^(2^2). Repeated tetration defines "pentation". Repeated pentation defines "hexation"
+
+Given n * n = n^2 then n^n = n^^2 or "n tetrated to 2". Therefore the "Great Myriad" of 10000^10000 is equal to 10000^^2. Since 10000^2 is the "Deuteros Myriad", 10000^^2 can be termed the "Deuteros Tetrated Myriad". Then, repeated tetration can be applied to define the next hyperoperation, such that 10000^^^2 is the "Deuteros Pentated Myriad" which, by repeated application, can construct the "Deuteros Hexated Myriad" at 10000^^^^2. By this scheme all the hyperoperations can be applied to the myriad and accounted for, including the "Deuteros Hectated Myriad", the "Deuteros Myriatated Myriad". As previously noted, oridnals like "Second" or "Second Degree" can be used in place of "Deuteros". Please refer to the nomenclature tables for ordinal names, and hyperoperation names. [8]
+
+
+
+## Counting in Various Languages
+
+Do not assume that because this document is written in American English, the Great Myriad Scale is only usable in American English. All terms coined are intended to be translated in about the same manner one would translate an English cardinal or ordinal number. If you use *myriad*, *myriade*, or *miriada*; then you would use *deutyriad*, *deutyriade*, or *deutiada* (assuming Google translate has accurately translated "myriad" into French and Spanish). Similarly, *Great* may translate to *Grande*, or *Grande*; *Tenfold* to *Diez veces* or *Dix fois*. Modify the nomenclature as required. 
+
+
 ## Footnotes and (Additional) Trivia
 
 * Strictly employing Ancient Greek ordinals is, in a word, challenging. There are conflicting uses of ordinal and cardinal forms, which is to say nothing of the challenges of conflicting transliterations. Nomenclature was chosen to minimize exceptional namings or spellings.
 * You can certainly call infinity the "Apyriad" if you wish. The "Apyriad" is derived from "apeiro".[5]
-* Archimedes' largest Sand Number (the largest described in The Sand Reckoner) is equal to 10^(8 * 10^16), or a "Four-fold Greater Deutyriad".[8]
+* Archimedes' largest Sand Number (the largest described in The Sand Reckoner) is equal to 10^(8 * 10^16), or a "Four-fold Greater Deutyriad".[9]
 * "Cola's Enumeration" and the "Ordinal Myriad Scale" are previous attempts to enumerate large numbers, using the Conway Wechsler system, Greek ordinals, and hyperoperations. Ultimately, it is important that each name for a large number is based on the names of smaller numbers, rather than operations or notations. The numbers between "novel numbers", or "milestone numbers", also need to be nameable.
 
 
 ## Tables
 
-Nomenclature Table[5][6]
+### Nomenclature Tables[5][6][8]
 
 | n  | Name         | n  | Name            | n      | Name                          |    
 |----|--------------|----|-----------------|--------|-------------------------------|
@@ -126,8 +133,26 @@ Nomenclature Table[5][6]
 | 10 | Decatos      | 21 | Icostoprotos    | 1000   | Decatehecatostos (Chiliostos) |
 | 11 | Hendecatos   | 22 | Icostodeuteros  | 10000  | Myriad (Myriastos)            |
 
+Ordinals are used for naming powers (and hyper-powers), such that the square of a myriad is called a "Deuteros Myriad". Ordinals of any language can be used such as "Second Myriad" or "Second Degree Myriad".
 
-Sub-myriad Table[5] 
+
+| n  | Name         | n  | Name            | n      | Name                          |    
+|----|--------------|----|-----------------|--------|-------------------------------|
+| 1  | Hena-        | 12 | Dodeca-         | 30     | Triconta-                     |
+| 2  | Di-          | 13 | Triskaideca-    | 40     | Tetraconta-                   |
+| 3  | Tri-         | 14 | Tetrakaideca-   | 50     | Pentaconta-                   |
+| 4  | Tetra-       | 15 | Pentakaideca-   | 60     | Hexaconta-                    |
+| 5  | Penta-       | 16 | Hexakaideca-    | 70     | Heptaconta-                   |
+| 6  | Hexa-        | 17 | Heptakaideca-   | 80     | Octaconta-                    |
+| 7  | Hecta-       | 18 | Octakaideca-    | 90     | Enneaconta-                   |
+| 8  | Octa-        | 19 | Enneakaideca-   | 100    | Hecato-                       |
+| 9  | Ennea-       | 20 | Icosa-`         | 500    | Pentahecato-                  |
+| 10 | Deca-        | 21 | Icosahena-      | 1000   | Decahecato- (Chilia-)         |
+| 11 | Hendeca-     | 22 | Icosadi-        | 10000  | Myria-                        |
+
+These prefixes are used for naming hyperoperations, such as "tetration" and "pentation". Additionaly, it is possible to construct numbers with hyperoperations, such as the "Deuteros Tetrated Myriad", or "Great Myriad" (equal to 10000^^2 and 10000^10000). Each operation is defined by repeating the previous operation: addition, multiplication, exponentiation, tetration, pentation... 
+
+### Sub-myriad Table[5] 
 
 | n  | Name   | n  | Name       | n      | Name                       |      
 |----|--------|----|------------|--------|----------------------------|
@@ -144,7 +169,7 @@ Sub-myriad Table[5]
 | 11 | Eleven | 22 | Twenty Two | 1,0000 | One Myriad                 |
 
 
-The Myriad Powers[5][6]
+### The Myriad Powers[5][6]
 
 |   e | Name              |   e | Name                  |     e | Name                    |
 |----:|:------------------|----:|:----------------------|------:|:------------------------|
@@ -159,9 +184,10 @@ The Myriad Powers[5][6]
 |  36 | One Enatyriad     |  80 | One Icostyriad        |  2000 | One Pentehecatostyriad  |
 |  40 | One Decatyriad    |  84 | One Icostoprotyriad   |  4000 | One Decatehecatostyriad |
 |  44 | One Hendecatyriad |  88 | One Icostodeutyriad   | 40000 | One Great Myriad        |
+Each of these are named by combining an ordinal with "myriad", as a portmanteau. 
 
 
-Table of Scales[2][3][4][5][6]
+### Table of Scales[2][3][4][5][6]
 
 |     e | Great Myriad Scale             | Conway-Weschler Short                           | Conway-Weschler Long                             |
 |------:|:-------------------------------|:------------------------------------------------|:-------------------------------------------------|
@@ -238,4 +264,5 @@ Table of Scales[2][3][4][5][6]
 * [5] [List of Polygons](https://en.wikipedia.org/wiki/List_of_polygons)
 * [6] [Ancient Greek Numbers](https://en.wiktionary.org/wiki/%CF%84%CE%AD%CF%83%CF%83%CE%B1%CF%81%CE%B5%CF%82)
 * [7] [Knuth's Supernatural Numbers](https://mrob.com/pub/math/largenum-2.html#yllion)
-* [8] [Archimedes' Sand Number](https://en.wikipedia.org/wiki/The_Sand_Reckoner)
+* [8] [Knuth's Up Arrow Notation](https://en.wikipedia.org/wiki/Knuth%27s_up-arrow_notation)
+* [9] [Archimedes' Sand Number](https://en.wikipedia.org/wiki/The_Sand_Reckoner)
