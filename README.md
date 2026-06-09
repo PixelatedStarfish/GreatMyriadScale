@@ -89,7 +89,7 @@ You continue on, counting "hundred-one" (101), and "hundred-two" (102). You coun
 
 ## Scale Variations
 
-### On Knuth's Supernatural Numbers
+### Using Thousands or "Chilliads"
 Say, for the sake of argument, that you really like the short scale, but not the Latin. You want to count with powers of one thousand, rather than powers of one myriad, or of one million. Well, you can use "chilliads" to count in the "Great Chilliad" Scale. "Chilliad" refers to one thousand, and the square of one thousand would be a "deuterilliad", from "deuteros-chilliad". You can then substitute the third power for "tritilliad", from "Tritos-Chilliad" and continue on accordingly.
 
 ### On Knuth's Supernatural Numbers
